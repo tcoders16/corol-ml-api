@@ -5,6 +5,11 @@ __pycache__/
 *.pyd
 *.so
 
+
+
+.env/
+.env
+.env.local
 # Virtual environment
 .venv/
 venv/
@@ -24,7 +29,7 @@ env/
 .idea/
 
 # Model weights
-*.joblib
+
 *.pkl
 *.h5
 
