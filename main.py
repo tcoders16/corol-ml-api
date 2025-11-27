@@ -16,16 +16,15 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    
+
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # register routes
+app.include_router(AuthRouter, prefix="/api/auth")
 app.include_router(PredictRouter, prefix="/api")
-
-app.include_router(AuthRouter, prefix="/api")
 
 
 @app.get("/")
