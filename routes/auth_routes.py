@@ -12,6 +12,7 @@ class LoginRequest(BaseModel):
 
 JWT_SECRET = os.getenv("JWT_SECRET")
 
+
 USERS = [
     {
         "username": os.getenv("ADMIN_1_USERNAME"),
@@ -22,8 +23,9 @@ USERS = [
         "password": os.getenv("ADMIN_2_PASSWORD")
     }
 ]
+print("Loaded users:", USERS)
 
-@router.post("/api/login")
+@router.post("/auth/login")
 def login(req: LoginRequest):
     for user in USERS:
         if user["username"] == req.username and user["password"] == req.password:

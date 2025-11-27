@@ -1,7 +1,13 @@
+from dotenv import load_dotenv
+load_dotenv()
+
+
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes.predict_routes import router as PredictRouter
 import uvicorn
+from routes.auth_routes import router as AuthRouter
 
 
 app = FastAPI()
@@ -10,6 +16,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -17,6 +24,9 @@ app.add_middleware(
 
 # register routes
 app.include_router(PredictRouter, prefix="/api")
+
+app.include_router(AuthRouter, prefix="/api")
+
 
 @app.get("/")
 def root():
