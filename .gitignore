@@ -8,8 +8,6 @@ __pycache__/
 
 
 .env/
-.env
-.env.local
 # Virtual environment
 .venv/
 venv/
@@ -25,7 +23,6 @@ env/
 *.log
 
 # Editor folders
-.vscode/
 .idea/
 
 # Model weights
@@ -36,3 +33,5 @@ env/
 # Build/Cache
 dist/
 build/
+config.bat
+node_modules
