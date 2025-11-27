@@ -25,7 +25,7 @@ USERS = [
 ]
 print("Loaded users:", USERS)
 
-@router.post("/auth/login")
+@router.post("/login")
 def login(req: LoginRequest):
     for user in USERS:
         if user["username"] == req.username and user["password"] == req.password:
