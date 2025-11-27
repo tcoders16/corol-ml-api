@@ -12,3 +12,5 @@ PyJWT
 bcrypt
 email-validator
 python-jose
+python-dotenv
+dotenv
